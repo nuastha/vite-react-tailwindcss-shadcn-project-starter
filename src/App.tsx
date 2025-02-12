@@ -1,14 +1,15 @@
 
-import { Button } from "./components/ui/button"
-import { Progress } from "./components/ui/progress"
+import { useState } from "react"
+import Dashboard from "./app/dashboard/page"
+import Login from "./app/login/page"
 
 
 const App = () => {
+  const [isUserAuth, setIsUserAuth] = useState(false)
   return (
-    <div className="p-5 space-y-2 bg-gray-100">
-      <Button>Click me</Button>
-      <Progress value={33} />
-    </div>
+    <>
+      {isUserAuth ? <Dashboard /> : <Login />}
+    </>
   )
 }
 
